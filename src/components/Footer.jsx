@@ -3,7 +3,7 @@ import { ArrowUp } from "lucide-react";
 export const Footer = () => {
   return (
     <footer>
-      <div className="flex flex-row-reverse text-primary animate-float delay-300">
+      <div className="flex flex-row-reverse text-primary animate-float">
         <a href="#hero">
           <ArrowUp />
         </a>
