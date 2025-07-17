@@ -24,7 +24,7 @@ const projects = [
     title: "To-Do List Application with Task Management",
     description:
       "Built a lightweight and responsive To-Do List app using HTML, CSS, and JavaScript to manage daily tasks efficiently. The app allows users to add, delete, and mark tasks as complete in a clean and intuitive interface. Data persistence is managed using the browser’s local storage, enabling tasks to remain even after page reloads.",
-    image: "../projects/Todo-list/images/image_logo.png",
+    image: "/projects/Todo-list/images/image_logo.png",
     tags: [
       "HTML",
       "CSS",
@@ -33,7 +33,7 @@ const projects = [
       "Local Storage",
       "Responsive Design",
     ],
-    demoUrl: "../projects/Todo-list/index.html",
+    demoUrl: "/projects/Todo-list/index.html",
     githubUrl: "https://github.com/ferozzshaikk/Todo-list",
   },
   {
