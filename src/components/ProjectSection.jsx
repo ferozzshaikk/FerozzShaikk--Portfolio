@@ -21,6 +21,23 @@ const projects = [
   },
   {
     id: 2,
+    title: "To-Do List Application with Task Management",
+    description:
+      "Built a lightweight and responsive To-Do List app using HTML, CSS, and JavaScript to manage daily tasks efficiently. The app allows users to add, delete, and mark tasks as complete in a clean and intuitive interface. Data persistence is managed using the browser’s local storage, enabling tasks to remain even after page reloads.",
+    image: "../projects/Todo-list/images/image_logo.png",
+    tags: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "DOM Manipulation",
+      "Local Storage",
+      "Responsive Design",
+    ],
+    demoUrl: "../projects/Todo-list/index.html",
+    githubUrl: "https://github.com/ferozzshaikk/Todo-list",
+  },
+  {
+    id: 3,
     title: "Automatic Rain Shield Cover using Arduino UNO",
     description:
       "Designed and built an automatic cloth protection system that detects rain and activates a motorized cover using Arduino UNO, rain sensors, and relay modules. Aimed at preventing clothes from getting wet when drying outdoors during unexpected rainfall.",
