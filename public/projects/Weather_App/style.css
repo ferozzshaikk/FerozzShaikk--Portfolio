@@ -1,0 +1,115 @@
+:root {
+  --primary: #4361ee;
+  --secondary: #3a0ca3;
+  --text: #2b2d42;
+  --bgc: #f8f9fa;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #b8c6bd 0%, #3c6aaf 100%);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.container {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.695);
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+h1 {
+  margin-bottom: 20px;
+}
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+input[type="text"] {
+  flex: 1;
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 50px 0 0 50px;
+  color: rgb(0, 0, 0);
+  outline: none;
+  font-size: 16px;
+}
+button {
+  padding: 12px 20px;
+  background: var(--primary);
+  border: none;
+  outline: none;
+  border-radius: 0 50px 50px 0;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+button:hover {
+  background: var(--secondary);
+}
+#temperature {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 10px 0;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#weather-info {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  padding: 15px;
+  backdrop-filter: blur(5px);
+  margin: 10px 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+#weather-info h2 {
+  margin-bottom: 10px;
+  color: var(--secondary);
+}
+#details {
+  margin: 25px;
+  padding: 10px;
+}
+.detail-card {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  gap: 10px;
+}
+.detail-value {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  padding: 15px;
+  backdrop-filter: blur(5px);
+  font-size: 1.2rem;
+  margin-top: 5px;
+}
+.hidden {
+  display: none;
+}
+#error-msg {
+  color: rgb(205, 72, 0);
+  margin-top: 20px;
+}
+
+.forecast {
+  display: flex;
+  gap: 10px;
+  margin-top: 30px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}

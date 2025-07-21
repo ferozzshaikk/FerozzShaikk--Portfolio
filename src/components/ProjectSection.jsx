@@ -1,4 +1,4 @@
-import { ArrowRight, ExternalLink, Github } from "lucide-react";
+import { ArrowRight, ExternalLink, Github, } from "lucide-react";
 
 const projects = [
   {
@@ -38,6 +38,16 @@ const projects = [
   },
   {
     id: 3,
+    title: "Weather Forecast App",
+    description:
+      "A simple weather application built with HTML, CSS, and JavaScript that fetches real-time weather data using the OpenWeather API. Users can search for any city to view current temperature, weather conditions, humidity, and wind speed. Designed for responsive use across devices.",
+    image: "/projects/Weather_App/images/Weather-app.png",
+    tags: ["HTML", "CSS", "JavaScript", "OpenWeather API", "Frontend"],
+    demoUrl: "/projects/Weather_App/index.html",
+    githubUrl: "https://github.com/ferozzshaikk/weather-app",
+  },
+  {
+    id: 4,
     title: "Automatic Rain Shield Cover using Arduino UNO",
     description:
       "Designed and built an automatic cloth protection system that detects rain and activates a motorized cover using Arduino UNO, rain sensors, and relay modules. Aimed at preventing clothes from getting wet when drying outdoors during unexpected rainfall.",

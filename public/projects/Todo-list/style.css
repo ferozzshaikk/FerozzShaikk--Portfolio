@@ -38,7 +38,7 @@
   margin-bottom: 25px;
 }
 input {
-  flex-grow: 1;
+  flex: 1;
   border: none;
   outline: none;
   background: transparent;
