@@ -1,4 +1,5 @@
-import { ArrowRight, ExternalLink, Github, } from "lucide-react";
+import { useState } from "react";
+import { ArrowRight, ExternalLink, Github } from "lucide-react";
 
 const projects = [
   {
@@ -21,6 +22,26 @@ const projects = [
   },
   {
     id: 2,
+    title: "Weather Forecast App",
+    description:
+      "A simple weather application built with HTML, CSS, and JavaScript that fetches real-time weather data using the OpenWeather API. Users can search for any city to view current temperature, weather conditions, humidity, and wind speed. Designed for responsive use across devices.",
+    image: "/projects/Weather_App/images/Weather-app.png",
+    tags: ["HTML", "CSS", "JavaScript", "OpenWeather API", "Frontend"],
+    demoUrl: "/projects/Weather_App/index.html",
+    githubUrl: "https://github.com/ferozzshaikk/weather-app",
+  },
+  {
+    id: 3,
+    title: "Interactive Quiz Application",
+    description:
+      "A fully functional quiz app built with HTML, CSS, and JavaScript. It presents multiple-choice questions to users, tracks their score based on per-question marks, and displays the final result at the end. The quiz includes dynamic question rendering, user answer selection with visual feedback, and support for custom scoring logic. Designed with clean UI and responsive layout for both desktop and mobile devices.",
+    image: "/projects/Quiz-App/Quiz_app.png",
+    tags: ["HTML", "CSS", "JavaScript", "Frontend"],
+    demoUrl: "/projects/Quiz-App/index.html",
+    githubUrl: "https://github.com/ferozzshaikk/QuizApp",
+  },
+  {
+    id: 4,
     title: "To-Do List Application with Task Management",
     description:
       "Built a lightweight and responsive To-Do List app using HTML, CSS, and JavaScript to manage daily tasks efficiently. The app allows users to add, delete, and mark tasks as complete in a clean and intuitive interface. Data persistence is managed using the browser’s local storage, enabling tasks to remain even after page reloads.",
@@ -37,17 +58,7 @@ const projects = [
     githubUrl: "https://github.com/ferozzshaikk/Todo-list",
   },
   {
-    id: 3,
-    title: "Weather Forecast App",
-    description:
-      "A simple weather application built with HTML, CSS, and JavaScript that fetches real-time weather data using the OpenWeather API. Users can search for any city to view current temperature, weather conditions, humidity, and wind speed. Designed for responsive use across devices.",
-    image: "/projects/Weather_App/images/Weather-app.png",
-    tags: ["HTML", "CSS", "JavaScript", "OpenWeather API", "Frontend"],
-    demoUrl: "/projects/Weather_App/index.html",
-    githubUrl: "https://github.com/ferozzshaikk/weather-app",
-  },
-  {
-    id: 4,
+    id: 5,
     title: "Automatic Rain Shield Cover using Arduino UNO",
     description:
       "Designed and built an automatic cloth protection system that detects rain and activates a motorized cover using Arduino UNO, rain sensors, and relay modules. Aimed at preventing clothes from getting wet when drying outdoors during unexpected rainfall.",
@@ -63,7 +74,11 @@ const projects = [
     githubUrl: "non",
   },
 ];
+
 export const ProjectSection = () => {
+  const [showAll, setShowAll] = useState(false);
+  const visibleProjects = showAll ? projects : projects.slice(0, 4);
+
   return (
     <section id="projects" className="py-24 px-4 relative">
       <div className="container mx-auto max-w-5xl">
@@ -77,22 +92,22 @@ export const ProjectSection = () => {
         </p>
 
         <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
-          {projects.map((projects, key) => (
+          {visibleProjects.map((project, key) => (
             <div
               key={key}
               className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover"
             >
               <div className="h-80 overflow-hidden lg:h-73">
                 <img
-                  src={projects.image}
-                  alt={projects.title}
+                  src={project.image}
+                  alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
 
               <div className="p-6">
                 <div className="flex flex-wrap gap-2 mb-6">
-                  {projects.tags.map((tag, idx) => (
+                  {project.tags.map((tag, idx) => (
                     <span
                       key={idx}
                       className="px-2 py-1 text-xs font-medium border rounded-full bg-secondary text-secondary-foreground"
@@ -103,26 +118,30 @@ export const ProjectSection = () => {
                 </div>
 
                 <h3 className="text-left text-xl font-semibold mb-2">
-                  {projects.title}:
+                  {project.title}
                 </h3>
-                <p className="text-left text-md mb-4">{projects.description}</p>
-                {/* links */}
+                <p className="text-left text-md mb-4">{project.description}</p>
+
                 <div className="flex justify-between items-center">
                   <div className="flex space-x-3">
-                    <a
-                      href={projects.demoUrl}
-                      target="_blank"
-                      className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                    >
-                      <ExternalLink size={20} />
-                    </a>
-                    <a
-                      href={projects.githubUrl}
-                      target="_blank"
-                      className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                    >
-                      <Github size={20} />
-                    </a>
+                    {project.demoUrl !== "non" && (
+                      <a
+                        href={project.demoUrl}
+                        target="_blank"
+                        className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                      >
+                        <ExternalLink size={20} />
+                      </a>
+                    )}
+                    {project.githubUrl !== "non" && (
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                      >
+                        <Github size={20} />
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
@@ -130,11 +149,22 @@ export const ProjectSection = () => {
           ))}
         </div>
 
+        {/* View More Button */}
+        <div className="text-center mt-8">
+          <button
+            onClick={() => setShowAll(!showAll)}
+            className="cosmic-button w-fit flex items-center mx-auto gap-2"
+          >
+            {showAll ? "Show Less" : "View More..."}
+            <ArrowRight size={16} />
+          </button>
+        </div>
+
         <div className="text-center mt-12">
           <a
-            href="http://github.com/ferozzshaikk"
+            href="https://github.com/ferozzshaikk"
             target="_blank"
-            className="cosmic-button w-fit flex flex-xenter mx-auto gap-2"
+            className="cosmic-button w-fit flex items-center mx-auto gap-2"
           >
             Check My Github
             <ArrowRight size={16} />
