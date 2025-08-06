@@ -98,11 +98,13 @@ export const ProjectSection = () => {
               className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover"
             >
               <div className="h-80 overflow-hidden lg:h-73">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
+                <a href={project.demoUrl} target="_blank">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                </a>
               </div>
 
               <div className="p-6">
@@ -153,10 +155,9 @@ export const ProjectSection = () => {
         <div className="text-center mt-8">
           <button
             onClick={() => setShowAll(!showAll)}
-            className="cosmic-button w-fit flex items-center mx-auto gap-2"
+            className="cursor-pointer underline decoration-violet-500 hover:text-violet-500 w-fit flex items-center mx-auto gap-2"
           >
-            {showAll ? "Show Less" : "View More..."}
-            <ArrowRight size={16} />
+            {showAll ? "Show Less..." : "View More..."}
           </button>
         </div>
 
